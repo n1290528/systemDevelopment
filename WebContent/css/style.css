@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+table{
+	width:260px;	/*幅 260px*/
+}
+
+table,th,td{
+	border: 1px solid #bbb;  /*線：20px 実線　色：#bbb（沈んだグレー）*/
+}
+
+input{
+	border-style:none; /*線を表示しない*/
+}
+
+.box{
+	width:480px;	/*幅 480px*/
+	border:10px #dddddd solid;	/*線:10px　色:#dddddd(薄いグレー)　実線*/
+	margin-bottom:20px;		/*下余白：20px*/
+	text-align:center;		/*中央ぞろえ*/
+}
