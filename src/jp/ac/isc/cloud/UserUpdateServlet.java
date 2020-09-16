@@ -31,12 +31,13 @@ public class UserUpdateServlet extends HttpServlet {
 			String name = request.getParameter("updateName");
 			String picture = request.getParameter("updatePicture");
 			Statement state = users.createStatement();
-			if(name.length() !=0) {
-			state.executeUpdate("UPDATE user_table SET name='" + name + "' WHERE id ='" + id + "'");
-			}
-			if(picture.length() !=0) {
+			if(name.length() != 0 && picture.length() != 0){
+				state.executeUpdate("UPDATE user_table SET name='" + name + "',picture='" + picture + "' WHERE id ='" + id + "'");
+			}else if(picture.length() != 0){
 				state.executeUpdate("UPDATE user_table SET picture='" + picture + "' WHERE id ='" + id + "'");
-				}
+			}else if(name.length() != 0){
+				state.executeUpdate("UPDATE user_table SET name='" + name + "' WHERE id ='" + id + "'");
+			}
 			DBConnection.closeConnection(users, state);
 
 			//state.close();
